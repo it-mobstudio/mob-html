@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html class="perfect-scrollbar-on">
+<head>
+    <meta charset="utf-8">
+    <link href="/MobAdminUAT/favicon.png" rel="shortcut icon" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MOB | Admin Portal</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="viewport" content="width=device-width">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="login.css" rel="stylesheet" />
+    <link href="/MobAdminUAT/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/MobAdminUAT/assets/css/SweetAlert.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/MobAdminUAT/Scripts/FieldValidation.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/MobAdminUAT/Content/asset/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <style>
+        body {
+            font-family: Roboto, Helvetica, Arial, sans-serif !important;
+        }
+    </style>
+
+</head>
+<body >
+    <div class="" >
+        <div class="" >
+            <div class="container">
+
+                
+
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="modal fade" id="Supplierregistrationmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog home-registration" role="document" id="dvCustomProduct">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="dvSupplierregistration" class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="login-bg-color-style">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 seller-login d-none d-lg-block d-xl-block d-md-block">
+                    <div class="header-logo-padding-size">
+                        
+                        <img src="/mob-seller-logo.png" />
+                        
+                    </div>
+                    <div class="logo-bottom-section">
+                        <img src="/login-inner-logo.png" />
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                    
+<style>
+    .login-page {
+        display: block !important;margin-top:25px;
+    }
+    .form-group .text-blue {
+        margin-top: 7px;
+    }   
+
+</style>
+
+            <div class="login-page pt-11vh">
+                <div class="row d-none d-lg-block d-xl-block d-md-block">
+                    <div class="offset-lg-1 col-lg-10 mt-2 ">
+                        <div class="card-login-box-style">
+<form action="/MobAdminUAT/" id="__AjaxAntiForgeryForm" method="post" returnUrl=""><input name="__RequestVerificationToken" type="hidden" value="Mo4cPiZ0ldxhTHM2IRa_KazZv_zk_W0R-lryCh-ECZsrb2KAPGdR8WWZydAWCkzRlhoSJxejWsXf4txXI4fDdIB7JG5jLeW5LsGhIRJKc2k1" />                                <h3 class="text-center">Log in to Admin portal</h3>                                   
+                                            <div class="form-group login-label-name mb-3">
+                                                <label>Mobile number / Email Id</label>
+                                                <div class="input-group-prepend">                                                   
+                                                </div>
+                                                <input autofocus="autofocus" class="form-control login-input-box" data-val="true" data-val-required="The LoginId field is required." id="LoginId" maxlength="50" name="LoginId" placeholder="User Name" required="true" tabindex="1" type="text" value="" />
+                                            </div>                                         
+                                        <div class="form-group form-group-top-style">
+                                            <label for="exampleInputPassword1 login-label-name">Password</label>
+                                            <div class="position-relative">
+                                                <input class="form-control login-input-box" id="Password" maxlength="20" name="Password" placeholder="Password" required="true" tabindex="2" type="Password" />
+                                                <span toggle="#Password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                                <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <a href="/MobAdminUAT/Settings/ForgotPasswordBO" class="text-blue float-lg-right">Forgot Password?</a>
+                                        </div>
+                                        <button type="submit" class="btn sign-in mt-2 width-100" tabindex="3">LOG IN</button>
+                                                <div class="d-flex justify-content-center">
+
+                                                </div>
+</form>                        </div>
+                    </div>
+                </div>
+                <div class="row d-block d-lg-none d-xl-none d-md-none">
+                    <div class="col-12 ">
+                        <div class="card-login-box-style">
+<form action="/MobAdminUAT/" id="__AjaxAntiForgeryForm" method="post" returnUrl=""><input name="__RequestVerificationToken" type="hidden" value="9ssvOITye2TTZjxRTkLh6Hgx5QJEUl9s-lxmab3FIDvbJ6PMAVnD4TAwcHjMyN_gSf3uenra5IhB7wsPGWF76Tnyy4cFrlRhXT8IZvSgwzw1" />                                <h3 class="text-center">Log in to Admin portal</h3>
+                                <div class="form-group login-label-name mb-3">
+                                    <label>Mobile number / Email Id</label>
+                                    <div class="input-group-prepend">
+                                    </div>
+                                    <input autofocus="autofocus" class="form-control login-input-box" data-val="true" data-val-required="The LoginId field is required." id="LoginId" maxlength="50" name="LoginId" placeholder="User Name" required="true" tabindex="1" type="text" value="" />
+                                </div>
+                                <div class="form-group form-group-top-style">
+                                    <label for="exampleInputPassword1 login-label-name">Password</label>
+                                    <div class="position-relative">
+                                        <input class="form-control login-input-box" id="Password" maxlength="20" name="Password" placeholder="Password" required="true" tabindex="2" type="Password" />
+                                        <span toggle="#Password" class="fa fa-fw fa-eye field-icon toggle-password-mob"></span>
+                                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="/MobAdminUAT/Settings/ForgotPasswordBO" class="text-blue forgot-password-mobile">Forgot Password?</a>
+                                    </div>                                    
+                                </div>
+                                            <button type="submit" class="btn sign-in mt-2 width-100 send-otp-style" tabindex="3">LOG IN</button>
+                                            <div class="d-flex justify-content-center">
+
+                                            </div>
+</form>                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+<script>
+    $(".toggle-password").click(function () {
+        debugger;
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "Password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "Password");
+        }
+    });
+    $(".toggle-password-mob").click(function () {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "Password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "Password");
+        }
+    });
+</script>
+                </div>
+            </div>
+            <div class="d-block d-lg-none d-xl-none d-md-none">
+                <div class="mobile-header-style fixed-top">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-7">
+                            
+                            <img src="/MobAdminUAT/Content/images/mobile-admin-logo.svg" />
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    
+    
+
+
+    
+    
+    <script src="/MobAdminUAT/assets/js/plugins/sweetalert.min.js"></script>
+ 
+</body>
+
+</html>
