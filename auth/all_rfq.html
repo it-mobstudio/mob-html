@@ -317,7 +317,7 @@
 
                         <li class="menu-open nav-item has-treeview checkactive">
                             <a class="active nav-link mainmenu"
-                                href="dashboard.html">
+                                href="#">
                                 <img src="/icons/dashboard.svg" class='nav-icon menu-icon-image' /></i>
                                 <p class='charwrap'>Dashboard</p>
                             </a></li>
@@ -349,7 +349,6 @@
                                    </li>
                                 </ul>
                              </li>
-                             
                         <li class="nav-item has-treeview checkactive">
                             <a class="nav-link"
                                 data-target="#Request_/_Enquires" data-toggle="collapse"
@@ -366,10 +365,10 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manageuser.html"  id="manage_user" onclick="addLinkClass()"><p class="ml-25 menusubmodule">Manage Users</p></a>
+                                    <a class="nav-link" href="manageuser.html"  id="manage_user" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Users</p></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="managerole.html"  id="manage_role" onclick="addLinkClass()"><p class="ml-25 menusubmodule">Manage Roles</p></a>
+                                    <a class="nav-link" href="managerole.html"  id="manage_role" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Roles</p></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="UserManagement/ManageModules"><p class="ml-25 menusubmodule">Manage Modules</p></a>
@@ -472,80 +471,7 @@
                         display: none;
                     }
                 </style>
-                
-                <div class="admin-style">
-                   
-                        <div class="card-header border-bottom-0">
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <h4 class="card-title">Roles</h4>
-                                </div>
-                
-                             
-                            </div>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <div class="row mb-3">
-                                <div class="col-md-5">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control search-box-input  input-height-common" aria-label="" placeholder="Search by Role name" id="rolessearch" name="FilterValue">
-                                        <a href="#"><i class="fa fa-search search-box-icon" aria-hidden="true" style="top:13px"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div id="printbar"><div class="dt-buttons"><button class="dt-button buttons-collection input-height-common" tabindex="0" aria-controls="dataTableid" type="button" aria-haspopup="true" aria-expanded="false"><span>EXPORT <i class="fa fa-angle-down"></i></span></button> </div></div>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <a href="add_role.html" rel="tooltip" title="" class="btn btn-theme btn-mob-size" data-original-title="">
-                                        Add Role
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="dataTableid_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTableid_length"><label>Show <select name="dataTableid_length" aria-controls="dataTableid" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTableid_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTableid"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-outer-border table-hover dataTable no-footer" id="dataTableid" role="grid" aria-describedby="dataTableid_info">
-                                <thead class="tablethclass">
-                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 559px;" aria-sort="ascending" aria-label="Role Name: activate to sort column descending">Role Name</th><th class="text-center sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 388.133px;" aria-label="Action: activate to sort column ascending">Action</th></tr>
-                                </thead><tbody>
-                                        
-                                        
-                                        
-                                        
-                                <tr role="row" class="odd">
-                                            <td class="sorting_1">MOB Admin</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/3" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr role="row" class="even">
-                                            <td class="sorting_1">Seller</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/2" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr role="row" class="odd">
-                                            <td class="sorting_1">Seller Inactive</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/5" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr role="row" class="even">
-                                            <td class="sorting_1">TestAdmin</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/4" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr></tbody>
-                            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTableid_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTableid_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTableid_previous"><a href="#" aria-controls="dataTableid" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTableid" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="dataTableid_next"><a href="#" aria-controls="dataTableid" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
-                        </div>
-                  
-                </div>
+
                 
                 
                 
@@ -585,7 +511,7 @@
                 </div>
                 
                 
-                <script type="text/javascript">
+                <!-- <script type="text/javascript">
                     function functionActUsers(BOUserId, IsActive, Name) {
                             var status = "";
                             var status1 = "";
@@ -643,8 +569,125 @@
                     });
                         }
                 
-                </script>
+                </script> -->
+                <div class="">
                 
+                    <div class="admin-style">
+                        <div class="card-header no-border">
+                            <div class="pull-left">
+                                <h4 class="card-title">RFQ'S</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form id="frmRFQ" class="ng-pristine ng-valid">
+                                <input name="__RequestVerificationToken" type="hidden" value="oumpCjNVxg4krImwgiPQ_m3Rjuyshox2DQiQXXX0jevnHB7bTAOCK2-FrSvq564XLUzlkpaxgTVMR8_OwT3EpnXEPGjiPX8ImQC2fsiPyWU1" autocomplete="off">
+                                <div class="form-body">
+                                    <div class="row mb-4">
+                                        <div class="col-md-3">
+                                            <label class="label-text-style" for="FromDT" style="margin-top:5px;margin-right: 5px;">From Date<span class="text-danger"> *</span></label>
+                                            <div id="FromDTValid" class="input-group date">
+                                                <input autocomplete="off" class="form-control datepicker input-height-common date-border-radius" id="FromDT" name="FromDT" required="required" type="text" value="">
+                                                <div class="input-group-append ">
+                                                    <div class="input-group-text date-append"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                                <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="FromDT" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                    
+                                            </div>
+                    
+                                        </div>
+                    
+                                        <div class="col-md-3">
+                                            <label class="label-text-style" for="ToDT" style="margin-top:5px;margin-right: 5px;">To Date <span class="text-danger"> *</span></label>
+                                            <div id="ToDTValid" class="input-group date">
+                                                <input autocomplete="off" class="form-control datepicker input-height-common date-border-radius" id="ToDT" name="ToDT" required="required" type="text" value="">
+                                                <div class="input-group-append ">
+                                                    <div class="input-group-text date-append"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                                <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="ToDT" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                    
+                                            </div>
+                    
+                                        </div>
+                    
+                    
+                    
+                                        <div class="col-md-3 align-self-end">
+                    
+                                            <button type="button" onclick="GetRFQ();" class="btn btn-theme btn-mob-size">Search</button>
+                    
+                                        </div>
+                    
+                                    </div>
+                    
+                    
+                    
+                                    <div class="table-responsive" id="dvRFQ"><div style="border-radius: 16px;">
+                        <div id="dataTableid_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="dt-buttons">      <button class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="dataTableid" type="button"><span>Excel</span></button> <button class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="dataTableid" type="button"><span>PDF</span></button> <button class="dt-button buttons-csv buttons-html5" tabindex="0" aria-controls="dataTableid" type="button"><span>CSV</span></button> <button class="dt-button buttons-print" tabindex="0" aria-controls="dataTableid" type="button"><span>Print</span></button> </div><div id="dataTableid_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTableid"></label></div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px none; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1505.88px; padding-right: 0px;"><table class="table table-outer-border table-hover dataTable no-footer nowrap rfqtable" role="grid" style="margin-left: 0px; width: 1505.88px;"><thead class="tablethclass">
+                                <tr role="row"><th class="noExport sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 7.33333px;" aria-label=": activate to sort column ascending"></th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 108.067px;" aria-label="RFQ Id: activate to sort column ascending">RFQ Id</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 157.283px;" aria-label="Date: activate to sort column ascending">Date</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 107.05px;" aria-label="Name: activate to sort column ascending">Name</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 75.8167px;" aria-label="Mobile no: activate to sort column ascending">Mobile no</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 41.6167px;" aria-label="Email: activate to sort column ascending">Email</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 181.067px;" aria-label="Remarks: activate to sort column ascending">Remarks</th><th class="text-center sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 96.15px;" aria-label="Total quotes: activate to sort column ascending">Total quotes</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 104.867px;" aria-label="Status: activate to sort column ascending">Status</th><th class="sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 140.05px;" aria-label="Order No: activate to sort column ascending">Order No</th><th class="text-center noExport sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 38.5833px;" aria-label="View: activate to sort column ascending">View</th></tr>
+                            </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;"><table class="table table-outer-border table-hover dataTable no-footer nowrap rfqtable" id="dataTableid" role="grid" aria-describedby="dataTableid_info" style="width: 1500px;"><thead class="tablethclass">
+                                <tr role="row" style="height: 0px;"><th class="noExport sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 7.33333px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=": activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;"></div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 108.067px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RFQ Id: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RFQ Id</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 157.283px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Date: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Date</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 107.05px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Name: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Name</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 75.8167px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Mobile no: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Mobile no</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 41.6167px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Email: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Email</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 181.067px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Remarks: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Remarks</div></th><th class="text-center sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 96.15px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Total quotes: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total quotes</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 104.867px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Status: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Status</div></th><th class="sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 140.05px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Order No: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Order No</div></th><th class="text-center noExport sorting" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 38.5833px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="View: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">View</div></th></tr>
+                            </thead>
+                            
+                            <tbody>
+                                            
+                                            
+                                            
+                                            
+                                            
+                            <tr role="row" class="odd">
+                                                <td class="text-center noExport">
+                                                        <div class="dropdown1">
+                                                            <button class="three-dots  dropdown1-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    
+                                                            <div class="dropdown-menu drop-rfq" aria-labelledby="dropdownMenuButton">
+                    
+                                                                <a class="RFQ-dropdown-item dropdown-item" href="#" data-toggle="modal" onclick="fncRFQModal('260','RFQ_000000359')">Upload Quote</a>
+                                                                <a class="RFQ-dropdown-item dropdown-item" href="/MobAdminUAT/Indent/CreateOrder?RFQId=260">Create Order</a>
+                    
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </td>
+                                                <td>
+                                                    <a href="get_quote_details.html" target="_blank" style="cursor:pointer;">RFQ_000000359</a>
+                    
+                                                </td>
+                                                <td class="text-nowrap">13-Jul-2023 05:49 PM</td>
+                                                <td>Anurag Satpathy</td>
+                                                <td>8511830665</td>
+                                                <td></td>
+                                                <td class="pre_whitespace"><div class="content mb-2">4 Ac</div></td>
+                                                <td class="text-center">2</td>
+                                                <td>
+                                                            <span class="badge badge-warning">Quote sent</span>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td class="text-center">
+                                                        <a href="Indent/Download?FilePath=http://115.110.148.101/MOBUATDoc//RFQDocument//RFQ_0_13072023054939.png" target="_blank" id="downloadFile" title="Download File"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                                                </td>
+                    
+                                            </tr></tbody>
+                    
+                        </table></div></div><div class="dataTables_info" id="dataTableid_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div><div class="dataTables_paginate paging_full_numbers" id="dataTableid_paginate"><ul class="pagination"><li class="paginate_button page-item first disabled" id="dataTableid_first"><a href="#" aria-controls="dataTableid" data-dt-idx="0" tabindex="0" class="page-link">First</a></li><li class="paginate_button page-item previous disabled" id="dataTableid_previous"><a href="#" aria-controls="dataTableid" data-dt-idx="1" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTableid" data-dt-idx="2" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="dataTableid_next"><a href="#" aria-controls="dataTableid" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li><li class="paginate_button page-item last disabled" id="dataTableid_last"><a href="#" aria-controls="dataTableid" data-dt-idx="4" tabindex="0" class="page-link">Last</a></li></ul></div></div>
+                    </div>
+                    
+                    <div id="dvRFQquote"></div>
+                    
+                    
+                    </div>
+                    
+                                </div>
+                    
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                                </div>
                 
                 
                 
@@ -705,8 +748,8 @@
     <script src="/auth/js/dataTables.bootstrap4.min.js"></script>
     <script src="/auth/js/dataTables.responsive.min.js"></script>
     <script src="/auth/js/responsive.bootstrap4.min.js"></script>
-    <script src="/auth/js/bootstrap-colorpicker.min.js"></script>
     <script src="/auth/js/myscript.js"></script>
+    <script src="/auth/js/bootstrap-colorpicker.min.js"></script>
     <script src="/auth/js/sweetalert.min.js"></script>
     <script src="/auth/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
