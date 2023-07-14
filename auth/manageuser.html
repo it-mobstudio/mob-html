@@ -338,10 +338,10 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manageuser.html"><p class="ml-25 menusubmodule">Manage Users</p></a>
+                                    <a class="nav-link" href="manageuser.html"  id="manage_user" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Users</p></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="managerole.html"><p class="ml-25 menusubmodule">Manage Roles</p></a>
+                                    <a class="nav-link" href="managerole.html"  id="manage_role" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Roles</p></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="UserManagement/ManageModules"><p class="ml-25 menusubmodule">Manage Modules</p></a>
@@ -468,7 +468,7 @@
                                     <div id="printbar"><div class="dt-buttons"><button class="dt-button buttons-collection input-height-common" tabindex="0" aria-controls="dataTableid" type="button" aria-haspopup="true" aria-expanded="false"><span>EXPORT <i class="fa fa-angle-down"></i></span></button> </div></div>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <a href="/MobAdminUAT/UserManagement/AddEditUsers" rel="tooltip" title="" class="btn btn-theme btn-mob-size" data-original-title="">
+                                    <a href="add_user.html" rel="tooltip" title="" class="btn btn-theme btn-mob-size" data-original-title="">
                                         Add User
                                     </a>
                                 </div>
@@ -683,6 +683,7 @@
     <script src="/auth/js/dataTables.responsive.min.js"></script>
     <script src="/auth/js/responsive.bootstrap4.min.js"></script>
     <script src="/auth/js/bootstrap-colorpicker.min.js"></script>
+    <script src="/auth/js/myscript.js"></script>
     <script src="/auth/js/sweetalert.min.js"></script>
     <script src="/auth/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>

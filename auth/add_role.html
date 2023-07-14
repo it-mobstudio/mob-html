@@ -1,0 +1,2985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="/MobAdminUAT/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>MOB | Admin Portal</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+
+    <!--     Fonts and icons     -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <link href="/auth/css/bootstrap-glyphicons.css" rel="stylesheet" />
+    <link href="/auth/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- iCheck -->
+    <link href="/auth/css/icheck-bootstrap.min.css" rel="stylesheet" />
+
+    <!-- JQVMap -->
+    <link href="/auth/css/jqvmap/jqvmap.min.css" rel="stylesheet" />
+
+    <!-- Theme style -->
+
+    <link href="/auth/css/adminlte.css" rel="stylesheet" />
+    <!-- overlayScrollbars -->
+
+    <link href="/auth/css/OverlayScrollbars.min.css" rel="stylesheet" />
+
+    <!-- Daterange picker -->
+    <link href="/auth/css/daterangepicker.css" rel="stylesheet" />
+
+    <!-- summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+
+
+    <link href="/auth/css/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="/auth/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+
+    <link href="/auth/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.5.1/css/buttons.bootstrap4.min.css">
+
+    <link href="/auth/css/toastr.min.css" rel="stylesheet" />
+    <link href="/auth/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="/auth/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- CSS Files -->
+    <link href="/auth/css/select2.min.css" rel="stylesheet" />
+    <link href="/auth/css/loading.css" rel="stylesheet" />
+
+    <link href="/auth/css/Custom.css" rel="stylesheet" />
+    <link href="/auth/css/SweetAlert.css" rel="stylesheet" />
+    <script src="/auth/css/jquery-3.4.1.min.js"></script>
+
+    <link href="/auth/css/angucomplete-alt.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALPA6XH5sHPxHwN22pfppPRLrI-PVzhhE&libraries=places&callback=initialize">
+    </script>
+
+    <style>
+        .ui-widget.ui-widget-content {
+            border: 1px solid #c5c5c5;
+        }
+
+        .ui-widget-content {
+            border: 1px solid #dddddd;
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .ui-autocomplete-category {
+            font-weight: bold;
+            padding: 0.2em 0.4em;
+            line-height: 1.5;
+            background-color: #dedede;
+        }
+
+        .ui-autocomplete {
+            z-index: 99999 !important;
+            list-style: none;
+            overflow-y: scroll !important;
+            overflow-x: hidden;
+            height: 250px;
+            width: 520px;
+        }
+
+        /*.dt-buttons {
+            float: left;
+        }*/
+
+        /*#dataTableid_info {
+            float: left;
+        }*/
+
+        .sidebar-dark-primary {
+            background: #032039 !important;
+        }
+
+        .brand-link {
+            display: flex;
+        }
+
+        .chkCatLbl {
+            margin-bottom: 0px;
+        }
+
+        span.topPosName {
+            color: red;
+            font-size: 11px;
+        }
+
+        .infoTop {
+            margin-top: -9px;
+        }
+
+        [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active,
+        [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus,
+        [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+            color: #00DE9D !important;
+            background: none !important;
+        }
+    </style>
+</head>
+
+<body class="sidebar-mini layout-fixed layout-navbar-fixed" ng-app="MOBadminApp"
+    style="max-width: 100%;overflow-x: hidden;">
+    <div class="wrapper" ng-controller="GetPOSNotificationcontroller">
+        <nav class="main-header navbar-expand navbar-blue" style="display: block !important">
+            <!-- Left navbar links -->
+            <div class="row">
+                <div class="col-2 d-flex align-items-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link  bars-nav-style" data-widget="pushmenu" role="button" rel="tooltip"
+                                title="" data-original-title="Change Menu"><i class="fa fa-bars"></i></a>
+                        </li>
+
+
+                        <li>
+                            <a class="nav-link " style="font-weight: 400"> </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5 d-flex align-items-center justify-content-end">
+                    <ul class="navbar-nav navbar  w-100 search-top-style-box">
+                        <li class="w-100">
+                            <form class="form-inline">
+                                <div class="input-group input-group-sm w-100 position-relative mobile-view-font-style">
+                                    <input
+                                        class="form-control form-control-navbar dynclass admin-main-search-box mobile-view"
+                                        style="border-radius:40px !important" id="txtSearchProduct" type="search"
+                                        placeholder="Search customer /seller /phone/ order" aria-label="Search">
+
+                                    <a class="admin-search-icon" onclick="return SearchProduct();">
+                                        <img src="/icons/search.svg" />
+                                    </a>
+
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-5 d-flex align-items-center justify-content-end">
+                    <ul class="navbar-nav float-right">
+                        <!-- Messages Dropdown Menu -->
+
+
+                        <!-- Notifications Dropdown Menu -->
+                        <li class="nav-item  dropdown dynclass">
+                            <a class="nav-link cursor-pointer" ng-click="fncGetPosNotification()">
+                                <img src="/icons/notification.svg" />
+                                <span id="lblNotifyCount" ng-bind="lblNotifyCount"
+                                    class="badge badge-danger navbar-badge">0</span>
+                            </a>
+                            <!-- Control Sidebar -->
+                            <!-- /.control-sidebar -->
+                        </li>
+
+                        <li class="nav-item  dropdown dynclass">
+                            <a class="nav-link cursor-pointer" ng-click="fncGetPosNotification()">
+                                <img src="/icons/question.svg" />
+                               
+                            </a>
+                            <!-- Control Sidebar -->
+                            <!-- /.control-sidebar -->
+                        </li>
+
+                        <li class="nav-item dropdown dynclass">
+                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="https://learnyzen.com/wp-content/uploads/2017/08/test1-481x385.png" width="32px"
+                                    class="avatar img-fluid rounded-circle mr-1" alt="">
+                                <span class="text-white font-16">Johnathon</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                <a class="dropdown-item" href="/MobAdminUAT/Settings/ChangePassword">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item cursor-pointer" onclick="return logout()"> Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="modal right fade" id="right_modal" tabindex="-1" role="dialog" aria-labelledby="right_modal"
+            style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content  border-left-radius" id="dvNotifications">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><label ng-bind="lblNotifyCount">0</label> Notifications</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="border-top-5" ng-repeat="item in Listvalues">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        <div class="font-18"> <span class="badge badge-grey">Waiting</span> <span
+                                                class="text-green text-uppercase ml-2"> {{item.Notifiaction}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right text-muted font-12">{{item.IndentDate}}</div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <h4 class="card-title font-14 font-weight-bold">Seller Order ID:
+                                            {{item.IndentNo}}</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="mt-1 font-12">Items: &nbsp; <b>{{item.Items.ToString("N0")}}</b>
+                                        </div>
+                                        <div class="mt-1 font-12">
+                                            <div>Total: &nbsp; <b><i class="fa fa-inr" aria-hidden="true"></i>
+                                                    {{item.Total}}</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-right mt-2">
+                                        <a href="/MobAdminUAT/Indent/TrackOrder?IndentNo={{item.IndentNo}}&OrderNo={{item.ParentIndentNo}}"
+                                            ng-click="btnUpdateNotification(item.ExceptionId)"
+                                            class="btn btn-theme btnUpdateNotification">VIEW TO ACCEPT </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $(".btnUpdateNotification").click(function (event) {
+                                //  event.preventDefault();
+                                debugger;
+                                var ExceptionId = $(this).attr('data-exceptionid');
+                                $.ajax({
+                                    url: '/MobAdminUAT/POSAccount/UpdatePOSNotificationsStatus',
+                                    cache: false,
+                                    datatype: "json",
+                                    data: {
+                                        ExceptionId: ExceptionId
+                                    },
+                                    success: function (result) {
+
+                                    },
+                                    complete: function (result) {
+
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <aside class="main-sidebar sidebar-light-primary sidebar-no-expand">
+
+            <a href="/MobAdminUAT/Home/Index" class="brand-link navbar navbar-blue align-middle">
+                <img src="/mob-seller-logo.png"
+                    title="MADOVERBUILDING AI PRIVATE LIMITED (mob)" alt="MOB" class="brand-image ml-2" />
+                <img src="/mob-seller-logo.png" alt="MOB"
+                    title="MADOVERBUILDING AI PRIVATE LIMITED (mob)" class="brand-image-small hidden" width="50%" />
+
+
+
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2 sidebar-top-style nav-bar-style">
+                    <ul class="nav nav-pills nav-sidebar flex-column dynclass layout-menu-bar" data-widget="treeview"
+                        role="menu" data-accordion="false">
+
+                        <li class="menu-open nav-item has-treeview checkactive">
+                            <a class="active nav-link mainmenu"
+                                href="#">
+                                <img src="/icons/dashboard.svg" class='nav-icon menu-icon-image' /></i>
+                                <p class='charwrap'>Dashboard</p>
+                            </a></li>
+
+                        <li class="nav-item has-treeview checkactive">
+                            <a class="nav-link"
+                                data-target="#Request_/_Enquires" data-toggle="collapse"
+                                 href="#"><img
+                                    class='nav-icon menu-icon-image' src="/icons/orders.svg" />
+                                <p class='charwrap'>Orders</p>
+                            </a>
+                         
+                        </li>
+                        <li class="nav-item has-treeview checkactive">
+                            <a class="nav-link" data-target="#User_Management" data-toggle="collapse" href="#User_Management">
+                                <img class="nav-icon menu-icon-image" src="/icons/enquiry.svg" />
+                                <p class="charwrap">User Management<i class="fa fa-angle-right rotate"></i></p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="manageuser.html"  id="manage_user" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Users</p></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="managerole.html"  id="manage_role" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Roles</p></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="UserManagement/ManageModules"><p class="ml-25 menusubmodule">Manage Modules</p></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="UserManagement/ManageSubModules"><p class="ml-25 menusubmodule">Manage Sub Modules</p></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview checkactive">
+                            <a class="nav-link"
+                                data-target="#Request_/_Enquires" data-toggle="collapse"
+                                 href="#"><img
+                                    class='nav-icon menu-icon-image' src="/icons/returns.svg" />
+                                <p class='charwrap'>Return / Exchange</p>
+                            </a>
+                         
+                        </li>
+                        
+                        <li class="nav-item has-treeview checkactive"><a class="nav-link" data-target="#User_Management"
+                                data-toggle="collapse" href="#User_Management">
+                                <img class='nav-icon menu-icon-image'
+                                    src="/icons/resell.svg" />
+                                <p class='charwrap'>Requests / Enquiries</p>
+                            </a>
+                           
+                        </li>
+                        <li class="nav-item has-treeview checkactive">
+                            <a class="nav-link" data-target="#Configuration"
+                                data-toggle="collapse" href="#Configuration">
+                                <img class='nav-icon menu-icon-image'
+                                    src="/icons/manage products.svg" />
+                                <p class='charwrap'>Product<i class='fa fa-angle-right rotate'></i></p>
+                            </a>
+                            <ul class="nav nav-treeview ">
+                                <li class="nav-item"><a class="nav-link" href="Master/ManagePos">
+                                        <p class='ml-25 menusubmodule'>Manage Seller</p>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" href="Master/ManageState">
+                                        <p class='ml-25 menusubmodule'>Manage State</p>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" href="Master/ManageCity">
+                                        <p class='ml-25 menusubmodule'>Manage City<img src=Content/images/Menu-Icon/MC
+                                                class='Mob-arrow' /></p>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" href="Master/ManageProductType">
+                                        <p class='ml-25 menusubmodule'>Manage Shop Type<img
+                                                src=Content/images/Menu-Icon/ST class='Mob-arrow' /></p>
+                                    </a></li>
+                                <li class="nav-item"><a class="nav-link" href="Master/GetDeliveryVehicles">
+                                        <p class='ml-25 menusubmodule'>Manage Delivery Vehicles</p>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        
+                        
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+
+
+        <div class="content-wrapper">
+            <div class="content-header p-0">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">
+
+                            </h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+
+
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <div class="">
+                
+                <style>
+                    div.dt-button-collection > :last-child {
+                        display: flex !important;
+                        flex-direction: column !important;
+                    }
+                
+                    button.dt-button.buttons-excel.buttons-html5 {
+                        padding-right: 28px !important;
+                        padding-left: 28px !important;
+                        padding-top: 5px !important;
+                        padding-bottom: 5px !important;
+                    }
+                
+                    div#dataTableid_length, div#dataTableid_filter {
+                        display: none;
+                    }
+                </style>
+
+<div class="admin-style">
+    <div class="card">
+        <div class="card-header">
+                    <div class=" pull-left">
+                        <h4 class="card-title">Add Roles</h4>
+                    </div>
+
+
+        </div>
+<form action="/MobAdminUAT/UserManagement/AddEditRoles" id="__AjaxAntiForgeryForm" method="post" onsubmit="DoSubmit();" role="form" novalidate="novalidate" class="ng-pristine ng-valid">            <div class="card-body">
+
+
+                <input name="__RequestVerificationToken" type="hidden" value="BiHLlqNgNpHtLD7oKYWIU0c1x0x8WSwRXyfs4lW7J6Mbnsr3dkSHXAjjGeOI2u33eTT_r6CDLSdhzDNovXFtnTf9zklgPkQmtvazXBNuXC81" autocomplete="off">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                            <label class="bmd-label-floating" for="form_control_1">Role Name</label><span class="text-danger">*</span>
+                            <input class="form-control input-height-common" data-val="true" data-val-required="The RoleName field is required." id="form_control_1" name="RoleName" type="text" value="">
+                            <input data-val="true" data-val-number="The field RoleId must be a number." id="RoleId" name="RoleId" type="hidden" value="" autocomplete="off">
+                            <input data-val="true" data-val-required="The RolePreviliges field is required." id="RolePreviliges" name="RolePreviliges" type="hidden" value="" autocomplete="off">
+
+                            <span class="help-block"> <span class="field-validation-valid text-danger" data-valmsg-for="RoleName" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                        </div>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="RolePreviliges" data-valmsg-replace="true" style="white-space:nowrap"></span>
+                    </div>
+
+
+
+<div class="col-md-4">
+    <div class="card" style="max-height:350px; overflow-y:scroll">
+        <div class="card-header">
+            <h5 class="card-title">
+                <i class="fa fa-cogs"></i> Back office privilege
+            </h5>
+
+        </div>
+        <div class="card-body">
+            <div class="panel-group accordion" id="accordion1">
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="1,0,0,0" class="module_1" onclick="moduleselct('1')" name="module">
+
+                                <span></span>
+                            </label>UserManagement
+                        </p>
+
+
+                        <div id="collapse_1" class="panel-collapse collapse" aria-expanded="false" style="">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_1 submoduleselect_1" onclick="submoduleselct('1','1')" value="1,1,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageModules
+                                                        </p>
+
+                                                        <div id="subcollapse_1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_1 submoduleselect_2" onclick="submoduleselct('2','1')" value="1,2,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageSubModules
+                                                        </p>
+
+                                                        <div id="subcollapse_2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_1 submoduleselect_3" onclick="submoduleselct('3','1')" value="1,3,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageRoles
+                                                        </p>
+
+                                                        <div id="subcollapse_3" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_1 submoduleselect_4" onclick="submoduleselct('4','1')" value="1,4,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageInnerSubModules
+                                                        </p>
+
+                                                        <div id="subcollapse_4" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_1 submoduleselect_5" onclick="submoduleselct('5','1')" value="1,5,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageUsers
+                                                        </p>
+
+                                                        <div id="subcollapse_5" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="2,0,0,0" class="module_2" onclick="moduleselct('2')" name="module">
+
+                                <span></span>
+                            </label>Master
+                        </p>
+
+
+                        <div id="collapse_2" class="panel-collapse collapse" aria-expanded="false" style="">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_6" onclick="submoduleselct('6','2')" value="2,6,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManagePos
+                                                        </p>
+
+                                                        <div id="subcollapse_6" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_7" onclick="submoduleselct('7','2')" value="2,7,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageDistributor
+                                                        </p>
+
+                                                        <div id="subcollapse_7" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_9" onclick="submoduleselct('9','2')" value="2,9,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageDistiller
+                                                        </p>
+
+                                                        <div id="subcollapse_9" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_11" onclick="submoduleselct('11','2')" value="2,11,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManagePOSType
+                                                        </p>
+
+                                                        <div id="subcollapse_11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_16" onclick="submoduleselct('16','2')" value="2,16,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageState
+                                                        </p>
+
+                                                        <div id="subcollapse_16" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_17" onclick="submoduleselct('17','2')" value="2,17,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageState
+                                                        </p>
+
+                                                        <div id="subcollapse_17" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_25" onclick="submoduleselct('25','2')" value="2,25,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageCity
+                                                        </p>
+
+                                                        <div id="subcollapse_25" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_43" onclick="submoduleselct('43','2')" value="2,43,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageProductType
+                                                        </p>
+
+                                                        <div id="subcollapse_43" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_45" onclick="submoduleselct('45','2')" value="2,45,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>QRCodeGeneration
+                                                        </p>
+
+                                                        <div id="subcollapse_45" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_58" onclick="submoduleselct('58','2')" value="2,58,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageChain
+                                                        </p>
+
+                                                        <div id="subcollapse_58" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_75" onclick="submoduleselct('75','2')" value="2,75,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>GetDeliveryVehicles
+                                                        </p>
+
+                                                        <div id="subcollapse_75" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_77" onclick="submoduleselct('77','2')" value="2,77,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>AccountsAndSettings
+                                                        </p>
+
+                                                        <div id="subcollapse_77" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_2 submoduleselect_78" onclick="submoduleselct('78','2')" value="2,78,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManagePincode
+                                                        </p>
+
+                                                        <div id="subcollapse_78" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_7" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="7,0,0,0" class="module_7" onclick="moduleselct('7')" name="module">
+
+                                <span></span>
+                            </label>Operations
+                        </p>
+
+
+                        <div id="collapse_7" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_7 submoduleselect_10" onclick="submoduleselct('10','7')" value="7,10,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>KYCApprove
+                                                        </p>
+
+                                                        <div id="subcollapse_10" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_7 submoduleselect_24" onclick="submoduleselct('24','7')" value="7,24,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>Banner
+                                                        </p>
+
+                                                        <div id="subcollapse_24" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_8" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="8,0,0,0" class="module_8" onclick="moduleselct('8')" name="module">
+
+                                <span></span>
+                            </label>Product
+                        </p>
+
+
+                        <div id="collapse_8" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_12" onclick="submoduleselct('12','8')" value="8,12,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageBrand
+                                                        </p>
+
+                                                        <div id="subcollapse_12" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_13" onclick="submoduleselct('13','8')" value="8,13,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageCategory
+                                                        </p>
+
+                                                        <div id="subcollapse_13" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_14" onclick="submoduleselct('14','8')" value="8,14,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageProductAttribute
+                                                        </p>
+
+                                                        <div id="subcollapse_14" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_15" onclick="submoduleselct('15','8')" value="8,15,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageProduct
+                                                        </p>
+
+                                                        <div id="subcollapse_15" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_20" onclick="submoduleselct('20','8')" value="8,20,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProductPricing
+                                                        </p>
+
+                                                        <div id="subcollapse_20" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_21" onclick="submoduleselct('21','8')" value="8,21,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProductMapping
+                                                        </p>
+
+                                                        <div id="subcollapse_21" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_30" onclick="submoduleselct('30','8')" value="8,30,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageSubCategory
+                                                        </p>
+
+                                                        <div id="subcollapse_30" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_33" onclick="submoduleselct('33','8')" value="8,33,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProductImageMapping
+                                                        </p>
+
+                                                        <div id="subcollapse_33" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_34" onclick="submoduleselct('34','8')" value="8,34,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>BulkUploadProduct
+                                                        </p>
+
+                                                        <div id="subcollapse_34" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_44" onclick="submoduleselct('44','8')" value="8,44,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProductPopularDetails
+                                                        </p>
+
+                                                        <div id="subcollapse_44" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_52" onclick="submoduleselct('52','8')" value="8,52,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CouponConfiguration
+                                                        </p>
+
+                                                        <div id="subcollapse_52" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_59" onclick="submoduleselct('59','8')" value="8,59,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProductSpecification
+                                                        </p>
+
+                                                        <div id="subcollapse_59" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_64" onclick="submoduleselct('64','8')" value="8,64,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageGrouping
+                                                        </p>
+
+                                                        <div id="subcollapse_64" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_68" onclick="submoduleselct('68','8')" value="8,68,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>MOBProduct
+                                                        </p>
+
+                                                        <div id="subcollapse_68" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_8 submoduleselect_82" onclick="submoduleselct('82','8')" value="8,82,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>MOBLibrary
+                                                        </p>
+
+                                                        <div id="subcollapse_82" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_9" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="9,0,0,0" class="module_9" onclick="moduleselct('9')" name="module">
+
+                                <span></span>
+                            </label>Configuration
+                        </p>
+
+
+                        <div id="collapse_9" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_9 submoduleselect_18" onclick="submoduleselct('18','9')" value="9,18,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageStateConfiguration
+                                                        </p>
+
+                                                        <div id="subcollapse_18" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_9 submoduleselect_19" onclick="submoduleselct('19','9')" value="9,19,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>DryDayCalender
+                                                        </p>
+
+                                                        <div id="subcollapse_19" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_9 submoduleselect_26" onclick="submoduleselct('26','9')" value="9,26,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageSMSContent
+                                                        </p>
+
+                                                        <div id="subcollapse_26" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_9 submoduleselect_27" onclick="submoduleselct('27','9')" value="9,27,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CreateBroadcast
+                                                        </p>
+
+                                                        <div id="subcollapse_27" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_9 submoduleselect_49" onclick="submoduleselct('49','9')" value="9,49,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>POSSMSTemplate
+                                                        </p>
+
+                                                        <div id="subcollapse_49" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_10" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="10,0,0,0" class="module_10" onclick="moduleselct('10')" name="module">
+
+                                <span></span>
+                            </label>Indent
+                        </p>
+
+
+                        <div id="collapse_10" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_10 submoduleselect_22" onclick="submoduleselct('22','10')" value="10,22,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>Indent
+                                                        </p>
+
+                                                        <div id="subcollapse_22" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_10 submoduleselect_37" onclick="submoduleselct('37','10')" value="10,37,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CreateOrder
+                                                        </p>
+
+                                                        <div id="subcollapse_37" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_10 submoduleselect_69" onclick="submoduleselct('69','10')" value="10,69,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProductReturn
+                                                        </p>
+
+                                                        <div id="subcollapse_69" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_11" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="11,0,0,0" class="module_11" onclick="moduleselct('11')" name="module">
+
+                                <span></span>
+                            </label>Promotions
+                        </p>
+
+
+                        <div id="collapse_11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_11 submoduleselect_23" onclick="submoduleselct('23','11')" value="11,23,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>BrandOffers
+                                                        </p>
+
+                                                        <div id="subcollapse_23" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_11 submoduleselect_55" onclick="submoduleselct('55','11')" value="11,55,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>PromotionsAndOffers
+                                                        </p>
+
+                                                        <div id="subcollapse_55" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_11 submoduleselect_61" onclick="submoduleselct('61','11')" value="11,61,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>POSBanner
+                                                        </p>
+
+                                                        <div id="subcollapse_61" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_12" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="12,0,0,0" class="module_12" onclick="moduleselct('12')" name="module">
+
+                                <span></span>
+                            </label>Consumer
+                        </p>
+
+
+                        <div id="collapse_12" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_12 submoduleselect_28" onclick="submoduleselct('28','12')" value="12,28,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>AddEditConsumer
+                                                        </p>
+
+                                                        <div id="subcollapse_28" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_12 submoduleselect_29" onclick="submoduleselct('29','12')" value="12,29,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageConsumer
+                                                        </p>
+
+                                                        <div id="subcollapse_29" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_12 submoduleselect_96" onclick="submoduleselct('96','12')" value="12,96,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>GetWalletbankTransfer
+                                                        </p>
+
+                                                        <div id="subcollapse_96" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_13" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="13,0,0,0" class="module_13" onclick="moduleselct('13')" name="module">
+
+                                <span></span>
+                            </label>Report
+                        </p>
+
+
+                        <div id="collapse_13" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_31" onclick="submoduleselct('31','13')" value="13,31,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CustomerDetails
+                                                        </p>
+
+                                                        <div id="subcollapse_31" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_32" onclick="submoduleselct('32','13')" value="13,32,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>UserAccessHistory
+                                                        </p>
+
+                                                        <div id="subcollapse_32" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_35" onclick="submoduleselct('35','13')" value="13,35,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>GetPGTransactionReport
+                                                        </p>
+
+                                                        <div id="subcollapse_35" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_38" onclick="submoduleselct('38','13')" value="13,38,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CreditSalesReport
+                                                        </p>
+
+                                                        <div id="subcollapse_38" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_39" onclick="submoduleselct('39','13')" value="13,39,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SettlementReport
+                                                        </p>
+
+                                                        <div id="subcollapse_39" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_41" onclick="submoduleselct('41','13')" value="13,41,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>IndentSummaryReport
+                                                        </p>
+
+                                                        <div id="subcollapse_41" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_46" onclick="submoduleselct('46','13')" value="13,46,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>InvoiceReport
+                                                        </p>
+
+                                                        <div id="subcollapse_46" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_51" onclick="submoduleselct('51','13')" value="13,51,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ProdcutPricingReport
+                                                        </p>
+
+                                                        <div id="subcollapse_51" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_54" onclick="submoduleselct('54','13')" value="13,54,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>POSUser
+                                                        </p>
+
+                                                        <div id="subcollapse_54" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_56" onclick="submoduleselct('56','13')" value="13,56,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>PGFailedTransactionReport
+                                                        </p>
+
+                                                        <div id="subcollapse_56" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_70" onclick="submoduleselct('70','13')" value="13,70,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CouponReport
+                                                        </p>
+
+                                                        <div id="subcollapse_70" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_71" onclick="submoduleselct('71','13')" value="13,71,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ItemwiseSales
+                                                        </p>
+
+                                                        <div id="subcollapse_71" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_72" onclick="submoduleselct('72','13')" value="13,72,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CategorywiseSales
+                                                        </p>
+
+                                                        <div id="subcollapse_72" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_73" onclick="submoduleselct('73','13')" value="13,73,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SellerwiseSales
+                                                        </p>
+
+                                                        <div id="subcollapse_73" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_13 submoduleselect_74" onclick="submoduleselct('74','13')" value="13,74,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>GetCancelledReport
+                                                        </p>
+
+                                                        <div id="subcollapse_74" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_14" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="14,0,0,0" class="module_14" onclick="moduleselct('14')" name="module">
+
+                                <span></span>
+                            </label>POSAccount
+                        </p>
+
+
+                        <div id="collapse_14" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_14 submoduleselect_42" onclick="submoduleselct('42','14')" value="14,42,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageProductsubscription
+                                                        </p>
+
+                                                        <div id="subcollapse_42" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_14 submoduleselect_50" onclick="submoduleselct('50','14')" value="14,50,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>AdhocService
+                                                        </p>
+
+                                                        <div id="subcollapse_50" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_17" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="17,0,0,0" class="module_17" onclick="moduleselct('17')" name="module">
+
+                                <span></span>
+                            </label>Enquiry
+                        </p>
+
+
+                        <div id="collapse_17" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_17 submoduleselect_53" onclick="submoduleselct('53','17')" value="17,53,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SupplierReport
+                                                        </p>
+
+                                                        <div id="subcollapse_53" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_17 submoduleselect_63" onclick="submoduleselct('63','17')" value="17,63,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>EmailSubscriptionReport
+                                                        </p>
+
+                                                        <div id="subcollapse_63" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_17 submoduleselect_66" onclick="submoduleselct('66','17')" value="17,66,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>RFQ
+                                                        </p>
+
+                                                        <div id="subcollapse_66" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_17 submoduleselect_67" onclick="submoduleselct('67','17')" value="17,67,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CustomProductRequest
+                                                        </p>
+
+                                                        <div id="subcollapse_67" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_17 submoduleselect_83" onclick="submoduleselct('83','17')" value="17,83,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ContactUs 
+                                                        </p>
+
+                                                        <div id="subcollapse_83" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_16" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="16,0,0,0" class="module_16" onclick="moduleselct('16')" name="module">
+
+                                <span></span>
+                            </label>ContentManagement
+                        </p>
+
+
+                        <div id="collapse_16" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_16 submoduleselect_65" onclick="submoduleselct('65','16')" value="16,65,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>BlogPosts
+                                                        </p>
+
+                                                        <div id="subcollapse_65" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_18" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="18,0,0,0" class="module_18" onclick="moduleselct('18')" name="module">
+
+                                <span></span>
+                            </label>SellerCRM
+                        </p>
+
+
+                        <div id="collapse_18" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_18 submoduleselect_76" onclick="submoduleselct('76','18')" value="18,76,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageOrder
+                                                        </p>
+
+                                                        <div id="subcollapse_76" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_18 submoduleselect_84" onclick="submoduleselct('84','18')" value="18,84,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ManageSellerOrder
+                                                        </p>
+
+                                                        <div id="subcollapse_84" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_18 submoduleselect_89" onclick="submoduleselct('89','18')" value="18,89,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SellerOrders
+                                                        </p>
+
+                                                        <div id="subcollapse_89" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_18 submoduleselect_95" onclick="submoduleselct('95','18')" value="18,95,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>Outofstock
+                                                        </p>
+
+                                                        <div id="subcollapse_95" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_19" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="19,0,0,0" class="module_19" onclick="moduleselct('19')" name="module">
+
+                                <span></span>
+                            </label>Settlement
+                        </p>
+
+
+                        <div id="collapse_19" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_19 submoduleselect_79" onclick="submoduleselct('79','19')" value="19,79,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>Settlement
+                                                        </p>
+
+                                                        <div id="subcollapse_79" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_20" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="20,0,0,0" class="module_20" onclick="moduleselct('20')" name="module">
+
+                                <span></span>
+                            </label>SellerSettlement
+                        </p>
+
+
+                        <div id="collapse_20" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_20 submoduleselect_80" onclick="submoduleselct('80','20')" value="20,80,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SettlementDetails
+                                                        </p>
+
+                                                        <div id="subcollapse_80" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_24" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="24,0,0,0" class="module_24" onclick="moduleselct('24')" name="module">
+
+                                <span></span>
+                            </label>SellerReturnExchange
+                        </p>
+
+
+                        <div id="collapse_24" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_24 submoduleselect_81" onclick="submoduleselct('81','24')" value="24,81,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SellerProductReturn
+                                                        </p>
+
+                                                        <div id="subcollapse_81" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_21" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="21,0,0,0" class="module_21" onclick="moduleselct('21')" name="module">
+
+                                <span></span>
+                            </label>Career
+                        </p>
+
+
+                        <div id="collapse_21" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_21 submoduleselect_85" onclick="submoduleselct('85','21')" value="21,85,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>Career
+                                                        </p>
+
+                                                        <div id="subcollapse_85" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_22" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="22,0,0,0" class="module_22" onclick="moduleselct('22')" name="module">
+
+                                <span></span>
+                            </label>Payablesreceivables
+                        </p>
+
+
+                        <div id="collapse_22" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_22 submoduleselect_86" onclick="submoduleselct('86','22')" value="22,86,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>PayablesAndreceivables
+                                                        </p>
+
+                                                        <div id="subcollapse_86" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_23" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="23,0,0,0" class="module_23" onclick="moduleselct('23')" name="module">
+
+                                <span></span>
+                            </label>SellerReport
+                        </p>
+
+
+                        <div id="collapse_23" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_23 submoduleselect_87" onclick="submoduleselct('87','23')" value="23,87,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SalesSummary
+                                                        </p>
+
+                                                        <div id="subcollapse_87" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_23 submoduleselect_88" onclick="submoduleselct('88','23')" value="23,88,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>CustomerMasterData
+                                                        </p>
+
+                                                        <div id="subcollapse_88" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_23 submoduleselect_91" onclick="submoduleselct('91','23')" value="23,91,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>PaymentRegister
+                                                        </p>
+
+                                                        <div id="subcollapse_91" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_23 submoduleselect_92" onclick="submoduleselct('92','23')" value="23,92,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>RecievablesPayables
+                                                        </p>
+
+                                                        <div id="subcollapse_92" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_23 submoduleselect_93" onclick="submoduleselct('93','23')" value="23,93,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>ReceiptRegister
+                                                        </p>
+
+                                                        <div id="subcollapse_93" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_25" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="25,0,0,0" class="module_25" onclick="moduleselct('25')" name="module">
+
+                                <span></span>
+                            </label>Orderissues
+                        </p>
+
+
+                        <div id="collapse_25" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_25 submoduleselect_90" onclick="submoduleselct('90','25')" value="25,90,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>SellerOrderissues
+                                                        </p>
+
+                                                        <div id="subcollapse_90" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse_26" aria-expanded="false">
+                                    +
+                                    &nbsp; &nbsp;
+                                </a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="26,0,0,0" class="module_26" onclick="moduleselct('26')" name="module">
+
+                                <span></span>
+                            </label>Ratingsandreviews
+                        </p>
+
+
+                        <div id="collapse_26" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                                <div class="panel panel-default" style="border-color: white; box-shadow: none !important;">
+                                                    <div>
+                                                        <p style="margin:0px;">
+                                                                <a style="cursor:none;visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                            &nbsp; <label class="mt-checkbox mt-checkbox-outline">
+                                                                    <input type="checkbox" class="submodule_26 submoduleselect_94" onclick="submoduleselct('94','26')" value="26,94,0,0" name="submodule">
+
+                                                                <span></span>
+                                                            </label>Ratingsandreviews
+                                                        </p>
+
+                                                        <div id="subcollapse_94" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                                <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="3,0,0,0" class="module_3" onclick="moduleselct('3')" name="module">
+
+                                <span></span>
+                            </label>Change Password
+                        </p>
+
+
+                        <div id="collapse_3" class="panel-collapse collapse" aria-expanded="false" style="height: 0px; ">
+                            <div class="panel-body">
+                                <div class="panel-group accordion" id="accordion2">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card" style="max-height:350px; overflow-y:scroll">
+        <div class="card-header">
+            <h5 class="card-title">
+                <i class="fa fa-mobile"></i> Mobile App privilege
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="panel-group accordion" id="accordion3">
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,1" class="module_1" name="module">
+
+                                <span></span>
+                            </label>UserManagement
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,2" class="module_2" name="module">
+
+                                <span></span>
+                            </label>Master
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,7" class="module_7" name="module">
+
+                                <span></span>
+                            </label>Operations
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,8" class="module_8" name="module">
+
+                                <span></span>
+                            </label>Product
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,9" class="module_9" name="module">
+
+                                <span></span>
+                            </label>Configuration
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,10" class="module_10" name="module">
+
+                                <span></span>
+                            </label>Indent
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,11" class="module_11" name="module">
+
+                                <span></span>
+                            </label>Promotions
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,12" class="module_12" name="module">
+
+                                <span></span>
+                            </label>Consumer
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,13" class="module_13" name="module">
+
+                                <span></span>
+                            </label>Report
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,14" class="module_14" name="module">
+
+                                <span></span>
+                            </label>POSAccount
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,17" class="module_17" name="module">
+
+                                <span></span>
+                            </label>Enquiry
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,16" class="module_16" name="module">
+
+                                <span></span>
+                            </label>ContentManagement
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,18" class="module_18" name="module">
+
+                                <span></span>
+                            </label>SellerCRM
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,19" class="module_19" name="module">
+
+                                <span></span>
+                            </label>Settlement
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,20" class="module_20" name="module">
+
+                                <span></span>
+                            </label>SellerSettlement
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,24" class="module_24" name="module">
+
+                                <span></span>
+                            </label>SellerReturnExchange
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,21" class="module_21" name="module">
+
+                                <span></span>
+                            </label>Career
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,22" class="module_22" name="module">
+
+                                <span></span>
+                            </label>Payablesreceivables
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,23" class="module_23" name="module">
+
+                                <span></span>
+                            </label>SellerReport
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,25" class="module_25" name="module">
+
+                                <span></span>
+                            </label>Orderissues
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,26" class="module_26" name="module">
+
+                                <span></span>
+                            </label>Ratingsandreviews
+                        </p>
+
+                    </div>
+                    <div id="checkboxes" class="panel panel-default" style="border-color: white; box-shadow: none !important; ">
+                        <p style="margin:0px;">
+                            <a style="cursor: none; visibility: hidden;">&nbsp; &nbsp; &nbsp;&nbsp;</a>
+                            <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" value="0,0,0,3" class="module_3" name="module">
+
+                                <span></span>
+                            </label>Change Password
+                        </p>
+
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <div style="float:right;">
+                    <a href="/MobAdminUAT/UserManagement/ManageRoles" class="btn cancel-btn-footer">Cancel</a>
+                    <button id="btnSubmit" type="submit" class="btn add-payment-btn-footer">Submit</button>
+
+                </div>
+            </div>
+</form>
+    </div>
+</div>
+                
+                
+                <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" style="width:90%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title">Map to Service Centre</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="BoUserID" autocomplete="off">
+                                <div class="row">
+                                    <div class="col-md-4">
+                
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-control" id="ddlCity" name="City" onchange="return getSCMapping(this);">
+                                            <option value="0" selected="">Select City</option>
+                
+                                        </select>
+                
+                                    </div>
+                                    <div class="col-md-4">
+                
+                                    </div>
+                                </div>
+                                <div class="row">
+                
+                                    <div id="divTable" style="margin-top:30px;height:300px;overflow-x:auto;">
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <script type="text/javascript">
+                    function functionActUsers(BOUserId, IsActive, Name) {
+                            var status = "";
+                            var status1 = "";
+                            if (IsActive == 1) {
+                                status = "Activate"
+                                status1 = "Deactivate"
+                            }
+                            else {
+                                status = "Deactivate"
+                                status1 = "Activate";
+                            }
+                            swal({
+                                title: "Do you want to " + status +" "+Name +"?",            
+                                type: "warning",
+                                showCancelButton: true,
+                                cancelButtonClass:"btn-danger",
+                                confirmButtonClass: "btn-success",
+                                confirmButtonText: "Yes!",
+                                cancelButtonText: "No!",
+                                closeOnConfirm: false,
+                                closeOnCancel: true
+                            },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            $.ajax({
+                                type: "POST",
+                                data: { 'BOUserId': BOUserId, 'IsActive': IsActive },
+                                url: "/MobAdminUAT/UserManagement/UPDBOUserStatus",
+                                dataType: "json",
+                                success: function (response) {
+                                    if (response.Status == 0) {
+                                        sweetAlert({
+                                            title: 'Success',
+                                            text: response.StatusDesc,
+                                            type: 'success'
+                                        }, function (isConfirm) {
+                                            location.reload();
+                                        });
+                                    }
+                                    else {
+                                        swal("Cancelled", response.StatusDesc, "error");
+                                    }
+                
+                                },
+                                failure: function (response) {
+                                    alert(response.responseText);
+                                },
+                                error: function (response) {
+                                    alert(response.responseText);
+                                }
+                            });
+                        } else {
+                      
+                        }
+                    });
+                        }
+                
+                </script>
+                
+                
+                
+                
+                
+                            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap 4 -->
+
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
+    <script src="/auth/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ChartJS -->
+
+    <!-- Sparkline -->
+
+    <!-- JQVMap -->
+
+
+    <!-- jQuery Knob Chart -->
+    <script src="/auth/js/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="/auth/js/moment.min.js"></script>
+
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
+    </script>
+
+    <!-- Tempusdominus Bootstrap 4 -->
+
+    <!-- Summernote -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+
+    <!-- overlayScrollbars -->
+    <script src="/auth/js/jquery.overlayScrollbars.min.js"></script>
+
+    <!-- AdminLTE App -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <script src="/auth/js/adminlte.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+    <!-- AdminLTE for demo purposes -->
+
+
+    <script src="/auth/js/loading.min.js"></script>
+    <script src="/auth/js/jquery.validate.min.js"></script>
+    <script src="/auth/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/auth/js/FieldValidation.js"></script>
+    <script src="/auth/js/js/select2.min.js"></script>
+    <script src="/auth/js/datatables/jquery.dataTables.min.js"></script>
+    <script src="/auth/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/auth/js/dataTables.responsive.min.js"></script>
+    <script src="/auth/js/responsive.bootstrap4.min.js"></script>
+    <script src="/auth/js/myscript.js"></script>
+    <script src="/auth/js/bootstrap-colorpicker.min.js"></script>
+    <script src="/auth/js/sweetalert.min.js"></script>
+    <script src="/auth/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="/auth/js/buttons.html5.min.js"></script>
+    <script src="/auth/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+
+    <script src="/auth/js/angular.min.js"></script>
+    <script src="/auth/js/controller.js"></script>
+    <script src="/auth/js/angucomplete-alt.js"></script>
+
+
+
+</body>
+
+</html>

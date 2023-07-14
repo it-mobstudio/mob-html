@@ -338,10 +338,10 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manageuser.html"  id="manage_user" onclick="addLinkClass()"><p class="ml-25 menusubmodule">Manage Users</p></a>
+                                    <a class="nav-link" href="manageuser.html"  id="manage_user" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Users</p></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="managerole.html"  id="manage_role" onclick="addLinkClass()"><p class="ml-25 menusubmodule">Manage Roles</p></a>
+                                    <a class="nav-link" href="managerole.html"  id="manage_role" onclick="changeLinkStyle()"><p class="ml-25 menusubmodule">Manage Roles</p></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="UserManagement/ManageModules"><p class="ml-25 menusubmodule">Manage Modules</p></a>
@@ -444,79 +444,146 @@
                         display: none;
                     }
                 </style>
-                
                 <div class="admin-style">
-                   
-                        <div class="card-header border-bottom-0">
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <h4 class="card-title">Roles</h4>
-                                </div>
+                    <div class="row">
                 
-                             
-                            </div>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <div class="row mb-3">
-                                <div class="col-md-5">
-                                    <div class="position-relative">
-                                        <input type="text" class="form-control search-box-input  input-height-common" aria-label="" placeholder="Search by Role name" id="rolessearch" name="FilterValue">
-                                        <a href="#"><i class="fa fa-search search-box-icon" aria-hidden="true" style="top:13px"></i></a>
+                        <div class="col-md-12 ">
+                            <!-- BEGIN SAMPLE FORM PORTLET-->
+                            <div class="card ">
+                                <div class="card-header">
+                                            <div class="pull-left">
+                                                <h4 class="card-title">Add Users</h4>
+                                            </div>
+                
+                
+                
+                                </div>
+                <form action="/MobAdminUAT/UserManagement/AddEditUsers" id="__AjaxAntiForgeryForm" method="post" onsubmit="DoSubmit();" role="form" novalidate="novalidate" class="ng-pristine ng-valid">                    <div class="card-body">
+                
+                                        <input name="__RequestVerificationToken" type="hidden" value="a560XJiOJguEVIF85LIfmw8SrmZgNJDS4VCIrvY5yV7A-brEnl5t3Cb7LZdR2QdZIveMptHGRm-MN4qQgrlgT49j2Pg2cw_FkoH2yHfKaAU1" autocomplete="off">
+                                        <div class="form-body">
+                                            <input id="StateCode" name="StateCode" type="hidden" value="" autocomplete="off">
+                                            <div id="BOUserPartialView">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group is-filled">
+                                                                
+                                                                <label class="bmd-label-floating " for="form_control_1">Role <span class="text-danger">*</span></label>
+                                                                <select class="form-control input-height-common" data-val="true" data-val-number="The field RoleId must be a number." data-val-required="The RoleId field is required." id="RoleId" name="RoleId"><option value="">Select Role Name</option>
+                <option value="2">Seller</option>
+                <option value="3">MOB Admin</option>
+                <option value="4">TestAdmin</option>
+                <option value="5">Seller Inactive</option>
+                </select>
+                                                                <input id="AgentPreviliges" name="AgentPreviliges" type="hidden" value="" autocomplete="off">
+                
+                                                                
+                                                                <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="RoleId" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                                                            </div>
+                                                        </div>
+                
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group">
+                                                                <label class="bmd-label-floating" for="form_control_1">Name <span class="text-danger">*</span></label>
+                                                                <input class="form-control input-height-common" data-val="true" data-val-length="Minimum 5 Character" data-val-length-max="50" data-val-length-min="5" data-val-required="The Name field is required." id="Name" maxlength="40" name="Name" onkeypress="return onlyAlphabets(event);" type="text" value="">
+                                                                <input data-val="true" data-val-number="The field BOUserId must be a number." id="BOUserId" name="BOUserId" type="hidden" value="" autocomplete="off">
+                
+                                                                <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group">
+                                                                <div class="input-icon right">
+                                                                    <label class="bmd-label-floating" for="form_control_1">Mobile No <span class="text-danger">*</span></label>
+                <input class="form-control input-height-common" data-val="true" data-val-length="Minimum 10 Character" data-val-length-max="10" data-val-length-min="10" data-val-regex="Not a valid Fax" data-val-regex-pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" data-val-required="The MobileNo field is required." id="MobileNo" maxlength="10" minlength="10" name="MobileNo" oncopy="return false" onkeypress="return isNumberKey(event);" onpaste="return false" type="text" value="">                                                        <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="MobileNo" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                                                                </div>
+                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group">
+                                                                <div class="input-icon right">
+                                                                    <label class="bmd-label-floating" for="form_control_1">Email ID <span class="text-danger">*</span></label>
+                <input class="form-control input-height-common" data-val="true" data-val-email="Invalid Email Address" data-val-length="Minimum 10 Character" data-val-length-max="50" data-val-length-min="10" data-val-required="The LoginId field is required." id="LoginId" name="LoginId" type="text" value="">                                                        <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="LoginId" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group">
+                                                                <label class="bmd-label-floating" for="form_control_1">Address 1 <span class="text-danger">*</span></label>
+                                                                <textarea class="form-control input-height-common" cols="20" data-val="true" data-val-length="Minimum 5 Character" data-val-length-max="500" data-val-length-min="5" data-val-required="The Address1 field is required." id="Address1" name="Address1" rows="2"></textarea>
+                
+                
+                                                                <span class="help-block"><span class="field-validation-valid text-danger" data-valmsg-for="Address1" data-valmsg-replace="true" style="white-space:nowrap"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group">
+                                                                <label class="bmd-label-floating" for="form_control_1">Address 2</label>
+                                                                <textarea class="form-control input-height-common" cols="20" data-val="true" data-val-length="Minimum 5 Character" data-val-length-max="500" data-val-length-min="5" id="Address2" name="Address2" rows="2"></textarea>
+                
+                
+                                                            </div>
+                                                        </div>
+                
+                                                    </div>
+                                                                            <div class="row">
+                                                                                <div class="col-md-4">
+                                                                                    <div class="form-group bmd-form-group">
+                                                                                        <label class="bmd-label-floating" for="form_control_1">LandLine No</label>
+                                                                                        <input class="form-control input-height-common" data-val="true" data-val-length="Minimum 10 Character" data-val-length-max="10" data-val-length-min="10" data-val-regex="Not a valid Fax" data-val-regex-pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" id="Phone" maxlength="10" minlength="10" name="Phone" oncopy="return false" onkeypress="return isNumberKey(event);" onpaste="return false" type="text" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="portlet border">
+                                                                                        <div class="card-header">
+                                                                                            <div class="caption">
+                                                                                                <i class="fa fa-gift"></i> Choose State
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-body" style="height: 250px; overflow:auto;">
+                                                                                                <div style="border-color: white; box-shadow: none !important;margin-left: 10px; ">
+                                                                                                    <input type="checkbox" onclick="SelectAllClick();" class="chk" name="chkVerifySelection"> Select All
+                                                                                                </div>
+                                                                                                        <div id="checkboxes" onclick="return SelectAllcheck();" style="border-color: white; box-shadow: none !important;margin-left: 10px; ">
+                                                                                                            <div class="checkbox">
+                                                                                                                <label>
+                                                                                                                            <input class="chkorNot" type="checkbox" value="KA"> KARNATAKA                                                                                                </label>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div id="checkboxes" onclick="return SelectAllcheck();" style="border-color: white; box-shadow: none !important;margin-left: 10px; ">
+                                                                                                            <div class="checkbox">
+                                                                                                                <label>
+                                                                                                                            <input class="chkorNot" type="checkbox" value="TN"> TAMIL NADU                                                                                                </label>
+                                                                                                            </div>
+                                                                                                        </div>
+                
+                
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                
+                                                                            </div>
+                
+                                            </div>
+                
+                                        </div>
+                
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div id="printbar"><div class="dt-buttons"><button class="dt-button buttons-collection input-height-common" tabindex="0" aria-controls="dataTableid" type="button" aria-haspopup="true" aria-expanded="false"><span>EXPORT <i class="fa fa-angle-down"></i></span></button> </div></div>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <a href="add_role.html" rel="tooltip" title="" class="btn btn-theme btn-mob-size" data-original-title="">
-                                        Add Role
-                                    </a>
-                                </div>
+                                    <div class="card-footer">
+                                        <div style="float:right;">
+                                            <a href="/MobAdminUAT/UserManagement/ManageUsers" class="btn cancel-btn-footer">Cancel</a>
+                                            <button id="btnSubmit" type="submit" class="btn add-payment-btn-footer">Submit</button>
+                                        </div>
+                                    </div>
+                </form>
                             </div>
-                            <div id="dataTableid_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTableid_length"><label>Show <select name="dataTableid_length" aria-controls="dataTableid" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTableid_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTableid"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-outer-border table-hover dataTable no-footer" id="dataTableid" role="grid" aria-describedby="dataTableid_info">
-                                <thead class="tablethclass">
-                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 559px;" aria-sort="ascending" aria-label="Role Name: activate to sort column descending">Role Name</th><th class="text-center sorting" tabindex="0" aria-controls="dataTableid" rowspan="1" colspan="1" style="width: 388.133px;" aria-label="Action: activate to sort column ascending">Action</th></tr>
-                                </thead><tbody>
-                                        
-                                        
-                                        
-                                        
-                                <tr role="row" class="odd">
-                                            <td class="sorting_1">MOB Admin</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/3" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr role="row" class="even">
-                                            <td class="sorting_1">Seller</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/2" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr role="row" class="odd">
-                                            <td class="sorting_1">Seller Inactive</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/5" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr><tr role="row" class="even">
-                                            <td class="sorting_1">TestAdmin</td>
-                                            <td class="text-center">
-                                                <a href="/MobAdminUAT/UserManagement/EditRoles/4" rel="tooltip" title="" class="btn btn-success btn-sm" data-original-title="Edit Role">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </td>
-                                        </tr></tbody>
-                            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTableid_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTableid_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTableid_previous"><a href="#" aria-controls="dataTableid" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTableid" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="dataTableid_next"><a href="#" aria-controls="dataTableid" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                            <!-- END SAMPLE FORM PORTLET-->
                         </div>
-                  
+                
+                    </div>
                 </div>
                 
                 
@@ -677,8 +744,8 @@
     <script src="/auth/js/dataTables.bootstrap4.min.js"></script>
     <script src="/auth/js/dataTables.responsive.min.js"></script>
     <script src="/auth/js/responsive.bootstrap4.min.js"></script>
-    <script src="/auth/js/bootstrap-colorpicker.min.js"></script>
     <script src="/auth/js/myscript.js"></script>
+    <script src="/auth/js/bootstrap-colorpicker.min.js"></script>
     <script src="/auth/js/sweetalert.min.js"></script>
     <script src="/auth/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
